@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+@font-face {
+  font-family: "Bumper Sticker DEMO";
+  src: url("/fonts/BumperStickerDEMO-Regular.woff2") format("woff2"),
+    url("/fonts/BumperStickerDEMO-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1b1b1b; /* Coffee-like color */
+  color: white;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.menu-grid {
+  padding: 50px 20px;
+}
+
+.back-button {
+  position: sticky;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #ff6f00;
+  transform: scale(1.1);
+}
+
+.menu-title {
+  color: white;
+  font-family: "Bumper Sticker DEMO", sans-serif;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Larger containers */
+  gap: 30px; /* Increased space between rows and columns */
+  justify-items: center;
+}
+
+.grid-item {
+  background-color: #f2f2f2; /* Light gray for contrast */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.grid-item h2 {
+  font-size: 1.7rem; /* Larger heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.grid-item ul {
+  list-style: none; /* No bullets */
+  padding: 0;
+  margin: 0;
+  color: #555;
+}
+
+.grid-item ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: black;
+  display: flex;
+  justify-content: space-between; /* Push price to the far right */
+  align-items: center;
+}
+
+.grid-item ul li .price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff6f00; /* Highlight prices */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-title {
+    font-size: 3rem;
+  }
+
+  .grid-item h2 {
+    font-size: 1.5rem;
+  }
+
+  .grid-item ul li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-title {
+    font-size: 2.5rem;
+  }
+
+  .grid-item h2 {
+    font-size: 1.2rem;
+  }
+
+  .grid-item ul li {
+    font-size: 0.9rem;
+  }
+
+  .grid-item ul li .price {
+    font-size: 0.9rem;
+  }
+}
