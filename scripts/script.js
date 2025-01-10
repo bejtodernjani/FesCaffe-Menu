@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
   reveal();
 
   // Disable logs in production
-  if (process.env.NODE_ENV !== "production") {
+  if (window.location.hostname === "localhost") {
     console.log("Preloader script initialized.");
   }
 });

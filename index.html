@@ -5,10 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'nonce-randomNonce'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self';" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet"
-    integrity="sha384-randomhash123" crossorigin="anonymous" />
+  <meta http-equiv="Content-Security-Policy" content="
+            default-src 'self';
+            script-src 'self' 'nonce-randomNonce' https://cdn.jsdelivr.net;
+            style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com;
+            font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+            img-src 'self' data:;
+            media-src 'self';
+          " />
   <link rel="stylesheet" href="/style/maincss.css" />
   <title>FessCafee</title>
 </head>
@@ -92,12 +96,9 @@
       </div>
     </section>
   </div>
-  <script type="module">
-    import { inject } from 'https://cdn.jsdelivr.net/npm/@vercel/analytics/dist/index.mjs';
-    inject();
-  </script>
-  <script nonce="randomNonce" src="/scripts/script.js"></script>
-  <script src="/scripts/security.js"></script>
+  <script nonce="12345" src="/scripts/inline-scripts.js" type="module"></script>
+  <script nonce="12345" src="/scripts/script.js"></script>
+  <script nonce="12345" src="/scripts/security.js"></script>
 
 </body>
 
