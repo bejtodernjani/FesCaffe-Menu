@@ -101,7 +101,7 @@ body {
 .grid-item h2 {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 800;
   margin: 10px 0;
   color: black;
 }

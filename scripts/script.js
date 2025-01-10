@@ -5,7 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.querySelector(".menu-btn");
   const navLinks = document.querySelector(".nav-links");
 
-  console.log("Preloader script started.");
+  // Sanitize user input or dynamic content if applicable
+  function sanitizeHTML(html) {
+    const template = document.createElement("template");
+    template.innerHTML = html;
+    return template.content.textContent || "";
+  }
+
+  // Securely handle preloader video
+  if (preloaderVideo) {
+    preloaderVideo.addEventListener("error", () => {
+      console.error("Failed to load preloader video. Check the source URL.");
+    });
+  }
 
   // Function to handle reveal animations
   function reveal() {
@@ -22,58 +34,74 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Menu Button Toggle
-  menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active"); // Toggle visibility of the menu
-    console.log("Menu button toggled.");
-  });
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active"); // Toggle visibility of the menu
+      console.info(
+        "Menu button toggled. State:",
+        navLinks.classList.contains("active")
+      );
+    });
 
-  // Close the menu when a link is clicked
-  navLinks.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") {
-      navLinks.classList.remove("active"); // Hide the menu
-      console.log("Menu link clicked.");
-    }
-  });
+    // Close menu when a link is clicked
+    navLinks.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") {
+        navLinks.classList.remove("active"); // Hide the menu
+        console.info("Menu link clicked. Navigation updated.");
+      }
+    });
+  }
 
-  // Attach the scroll event for reveal animations
-  window.addEventListener("scroll", reveal);
-
+  // Preloader management
   if (sessionStorage.getItem("preloaderShown")) {
-    // Skip preloader and show main content immediately
+    // Skip preloader on subsequent visits
     preloader.style.display = "none";
     mainContent.style.display = "block";
     mainContent.style.opacity = "1";
-    reveal(); // Trigger the reveal animations if needed
+    console.info("Main content displayed without preloader.");
+    reveal(); // Trigger reveal animations if needed
   } else {
-    // Run the preloader normally on first visit
     const hidePreloader = () => {
       preloader.style.display = "none";
       mainContent.style.display = "block";
       mainContent.style.opacity = "1";
-      reveal(); // Trigger the reveal logic on load
+      console.info("Preloader hidden, main content revealed.");
+      reveal(); // Trigger reveal animations on load
 
-      // Mark the preloader as shown
+      // Mark preloader as shown
       sessionStorage.setItem("preloaderShown", "true");
     };
 
-    // Timeout to hide preloader after a set duration
+    // Hide preloader after timeout
     const timeoutId = setTimeout(() => {
-      console.log("Preloader timeout reached.");
+      console.info("Preloader timeout reached.");
       hidePreloader();
     }, 6000);
 
-    // Hide preloader when the video ends
-    preloaderVideo.onended = () => {
-      console.log("Preloader video ended.");
-      clearTimeout(timeoutId);
-      hidePreloader();
-    };
+    // Hide preloader when video ends
+    if (preloaderVideo) {
+      preloaderVideo.onended = () => {
+        console.info("Preloader video ended.");
+        clearTimeout(timeoutId);
+        hidePreloader();
+      };
 
-    // Hide preloader if there's an error loading the video
-    preloaderVideo.onerror = () => {
-      console.log("Preloader video error.");
-      clearTimeout(timeoutId);
-      hidePreloader();
-    };
+      preloaderVideo.onerror = () => {
+        console.error("Preloader video error.");
+        clearTimeout(timeoutId);
+        hidePreloader();
+      };
+    }
+  }
+
+  // Attach scroll event for reveal animations
+  window.addEventListener("scroll", reveal);
+
+  // Initial call for reveal on load
+  reveal();
+
+  // Disable logs in production
+  if (process.env.NODE_ENV !== "production") {
+    console.log("Preloader script initialized.");
   }
 });
