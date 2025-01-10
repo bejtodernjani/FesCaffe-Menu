@@ -137,7 +137,7 @@ body {
   }
 
   .grid-item {
-    width: 150px; /* Adjust width for smaller screens */
+    width: 180px; /* Adjust width for smaller screens */
     height: 300px; /* Adjust height for smaller screens */
   }
 

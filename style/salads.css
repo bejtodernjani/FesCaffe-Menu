@@ -157,8 +157,8 @@ body {
   }
 
   .grid-item {
-    width: 120px; /* Smaller fixed width for mobile */
-    height: 200px; /* Smaller fixed height for mobile */
+    width: 180px; /* Smaller fixed width for mobile */
+    height: 250px; /* Smaller fixed height for mobile */
   }
 
   .grid-item img {

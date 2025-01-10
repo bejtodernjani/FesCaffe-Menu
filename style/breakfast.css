@@ -137,8 +137,8 @@ body {
   }
 
   .grid-item {
-    width: 150px; /* Adjust width for smaller screens */
-    height: 250px; /* Adjust height for smaller screens */
+    width: 180px; /* Adjust width for smaller screens */
+    height: 300px; /* Adjust height for smaller screens */
   }
 
   .grid-item img {
@@ -157,8 +157,8 @@ body {
   }
 
   .grid-item {
-    width: 120px; /* Smaller fixed width for mobile */
-    height: 200px; /* Smaller fixed height for mobile */
+    width: 180px; /* Smaller fixed width for mobile */
+    height: 300px; /* Smaller fixed height for mobile */
   }
 
   .grid-item img {
