@@ -50,6 +50,7 @@ body {
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .grid-container {

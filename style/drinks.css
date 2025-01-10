@@ -8,12 +8,16 @@
 }
 
 body {
-  background-color: #fff; /* Coffee-like color */
   color: black;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
-
+#cold {
+  background-color: #c4d3e5;
+}
+#hot {
+  background-color: #d96149;
+}
 .menu-grid {
   padding: 50px 20px;
 }
@@ -50,6 +54,7 @@ body {
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .grid-container {
