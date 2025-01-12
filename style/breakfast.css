@@ -96,6 +96,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  word-wrap: break-word; /* Force text to wrap */
+  overflow-wrap: break-word; /* Modern alternative for text wrapping */
+  text-align: center; /* Align text in the center */
 }
 
 .grid-item h2 {
@@ -129,8 +132,8 @@ body {
   }
 
   .grid-item {
-    width: 180px; /* Adjust width for smaller screens */
-    height: 300px; /* Adjust height for smaller screens */
+    width: 200px; /* Smaller fixed width for mobile */
+    height: 320px; /* Smaller fixed height for mobile */
   }
 
   .grid-item img {
@@ -149,8 +152,8 @@ body {
   }
 
   .grid-item {
-    width: 180px; /* Smaller fixed width for mobile */
-    height: 300px; /* Smaller fixed height for mobile */
+    width: 200px; /* Smaller fixed width for mobile */
+    height: 320px; /* Smaller fixed height for mobile */
   }
 
   .grid-item img {
