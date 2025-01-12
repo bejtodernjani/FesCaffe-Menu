@@ -132,7 +132,7 @@ body {
   }
 
   .grid-item {
-    width: 200px; /* Smaller fixed width for mobile */
+    width: 180px; /* Smaller fixed width for mobile */
     height: 320px; /* Smaller fixed height for mobile */
   }
 
@@ -152,7 +152,7 @@ body {
   }
 
   .grid-item {
-    width: 200px; /* Smaller fixed width for mobile */
+    width: 180px; /* Smaller fixed width for mobile */
     height: 320px; /* Smaller fixed height for mobile */
   }
 
