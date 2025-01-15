@@ -15,8 +15,10 @@ body {
 
 /* Menu Grid Section */
 .menu-grid {
-  background-color: #ff311a; /* Background color of the section */
-  padding: 50px 20px;
+  padding: 0 16px;
+  box-sizing: border-box; /* Include padding in width */
+  max-width: 100%; /* Ensure it spans the full width */
+  margin: 0 auto; /* Center the container */
 }
 .back-button {
   position: sticky; /* Makes it stick while scrolling */
@@ -62,26 +64,28 @@ body {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(200px, 1fr)
-  ); /* Responsive grid */
-  gap: 20px; /* Space between grid items */
-  justify-items: center; /* Center items in their grid cell */
+    minmax(150px, 1fr)
+  ); /* Smaller min width for better mobile responsiveness */
+  gap: 16px; /* Adjust gap for smaller screens */
+  padding: 0; /* No extra padding inside the container */
+  margin: 0 auto; /* Center the grid container */
+  width: 100%; /* Ensure it spans the parent */
+  max-width: 100%; /* Prevent overflow */
+  box-sizing: border-box; /* Include padding/margins in calculations */
 }
 
 .grid-item {
-  width: 200px; /* Fixed width */
-  height: 300px; /* Fixed height */
+  height: auto; /* Allow flexible height */
   background-color: #f2f2f2; /* Light gray background */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: space-between; /* Distribute content evenly */
-  padding: 15px;
-  box-sizing: border-box; /* Include padding in width and height */
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box; /* Include padding in dimensions */
 }
 
 .grid-item img {
@@ -111,7 +115,7 @@ body {
 
 .grid-item p {
   font-family: "Poppins", sans-serif;
-  font-size: 0.9rem;
+  font-size: 11px;
   color: gray;
 }
 
@@ -128,12 +132,17 @@ body {
 /* For tablets and smaller screens */
 @media (max-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+    ); /* Dynamically fit items */
+    gap: 12px; /* Reduce gap for smaller screens */
+    margin: 0 auto;
   }
 
   .grid-item {
-    width: 180px; /* Smaller fixed width for mobile */
-    height: 320px; /* Smaller fixed height for mobile */
+    height: 250px; /* Flexible height */
+    padding: 10px;
   }
 
   .grid-item img {
@@ -148,23 +157,27 @@ body {
   }
 
   .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Still two items per row */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+    ); /* Dynamically adjust items */
+    gap: 12px;
   }
 
   .grid-item {
-    width: 180px; /* Smaller fixed width for mobile */
-    height: 320px; /* Smaller fixed height for mobile */
+    height: 250px;
+    padding: 10px;
   }
 
   .grid-item img {
-    max-height: 80px; /* Further reduce image size */
+    max-height: 80px;
   }
 
   .grid-item h2 {
-    font-size: 1rem; /* Reduce font size for smaller screens */
+    font-size: 1rem;
   }
 
   .price {
-    font-size: 0.8rem; /* Reduce price font size */
+    font-size: 0.8rem;
   }
 }
