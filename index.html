@@ -10,10 +10,14 @@
     script-src 'self' 'nonce-randomNonce' https://cdn.jsdelivr.net;
     style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
-    img-src 'self' data:;
-    media-src 'self';
-  ">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+    img-src 'self' data:;">
+  <!-- Preload and Load Fonts -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins&family=Grandstander:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    as="style" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins&family=Grandstander:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/style/maincss.css" />
   <title>FessCafee</title>
 </head>
@@ -102,7 +106,6 @@
   <script nonce="randomNonce" src="/scripts/inline-scripts.js" type="module"></script>
   <script nonce="randomNonce" src="/scripts/script.js"></script>
   <script nonce="randomNonce" src="/scripts/security.js"></script>
-
 </body>
 
 </html>

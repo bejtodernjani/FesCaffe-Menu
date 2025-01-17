@@ -245,7 +245,7 @@ body {
 
   #preloader-text {
     margin-top: 15px; /* Reduce space for smaller screens */
-    font-size: 1rem; /* Slightly smaller text */
+    font-size: 23px; /* Slightly smaller text */
   }
 
   #preloader-text span {
@@ -253,7 +253,7 @@ body {
   }
 
   #preloader-text .third {
-    font-size: 13.9px; /* Slightly smaller third text */
+    font-size: 14.9px; /* Slightly smaller third text */
   }
   /* Hide desktop-style nav links */
   .nav-links {
@@ -331,7 +331,7 @@ body {
 
   #preloader-text {
     margin-top: 10px; /* Further reduce space for mobile */
-    font-size: 0.9rem; /* Smaller font size for mobile */
+    font-size: 22px; /* Smaller font size for mobile */
   }
 
   #preloader-text span {
@@ -339,7 +339,7 @@ body {
   }
 
   #preloader-text .third {
-    font-size: 13.9px; /* Smaller third text */
+    font-size: 14.9px; /* Smaller third text */
   }
 
   .hero-text h1 {
