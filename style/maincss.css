@@ -207,7 +207,7 @@ body {
 
 #preloader-text {
   margin-top: 20px; /* Add space between video and text */
-  font-size: 1.2rem; /* Adjust text size */
+  font-size: 27px; /* Adjust text size */
   color: black;
   text-align: center;
   font-family: "Mynerve", cursive;
@@ -221,7 +221,7 @@ body {
 
 #preloader-text .third {
   font-family: "Poppins", sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   color: gray;
 }
 
