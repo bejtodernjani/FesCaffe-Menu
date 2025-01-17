@@ -221,7 +221,7 @@ body {
 
 #preloader-text .third {
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 13px;
   color: gray;
 }
 
@@ -253,7 +253,7 @@ body {
   }
 
   #preloader-text .third {
-    font-size: 13px; /* Slightly smaller third text */
+    font-size: 15px; /* Slightly smaller third text */
   }
   /* Hide desktop-style nav links */
   .nav-links {
@@ -339,7 +339,7 @@ body {
   }
 
   #preloader-text .third {
-    font-size: 8px; /* Smaller third text */
+    font-size: 15px; /* Smaller third text */
   }
 
   .hero-text h1 {
