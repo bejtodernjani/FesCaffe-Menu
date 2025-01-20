@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'nonce-randomNonce' https://cdn.jsdelivr.net;
-    style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
-    img-src 'self' data:;">
+      default-src 'self';
+      script-src 'self' 'nonce-randomNonce' https://cdn.jsdelivr.net;
+      style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+      img-src 'self' data: https://flagcdn.com;">
   <!-- Preload and Load Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
   <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Damion&family=Mynerve&family=Poppins&family=Grandstander:wght@100;200;300;400;500;600;700;800;900&display=swap"
     as="style" />
@@ -41,12 +42,22 @@
       <div class="logo">
         <a href="#home"><img src="assets/fesi123456.png" alt="Logo" /></a>
       </div>
+
       <nav>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#menu">Menu</a></li>
+          <li><a href="#home" data-translate="home">Home</a></li>
+          <li><a href="#menu" data-translate="menu">Menu</a></li>
+          <!-- Language Switcher as a Dropdown Item -->
+          <li class="language-switcher">
+            <div id="language-switcher">
+              <img src="https://flagcdn.com/w40/gb.png" alt="English" title="English" data-lang="en" />
+              <img src="https://flagcdn.com/w40/mk.png" alt="Macedonian" title="Macedonian" data-lang="mk" />
+            </div>
+          </li>
         </ul>
       </nav>
+
+      <!-- Mobile Menu Toggle -->
       <button class="menu-btn">
         <i class="ri-menu-fill"></i>
         <!-- Menu icon -->
@@ -55,17 +66,20 @@
 
     <section class="hero reveal" id="home">
       <div class="hero-text">
-        <h1>Delight in Every<span> Bite</span></h1>
+        <h1 data-translate="delight">Delight in Every<span data-translate="bite">Bite</span></h1>
         <h2>
-          <span id="enjoy">enjoy</span><br />
-          OUR <span id="first">MEALS</span> AND
-          <span id="second">DRINKS</span>
+          <span id="enjoy" data-translate="enjoy">enjoy</span><br />
+          <span data-translate="our">OUR</span>
+          <span id="first" data-translate="meals">MEALS</span>
+          <span data-translate="and">AND</span>
+          <span id="second" data-translate="drinks">DRINKS</span>
         </h2>
-        <p>
+
+        <p data-translate="menuDescription">
           Check our menu below, and choose something from our delicious food
           and drinks
         </p>
-        <a href="#menu" class="hero-button">Check Our Menu</a>
+        <a href="#menu" class="hero-button" data-translate="checkMenu">Check Our Menu</a>
       </div>
       <div class="hero-image">
         <img src="assets/hero-image.png" alt="Savory Burger" />
@@ -101,6 +115,7 @@
       </div>
     </section>
   </div>
+  <script nonce="randomNonce" src="/scripts/languageSwitcher.js"></script>
   <script nonce="randomNonce" src="https://cdn.jsdelivr.net/npm/@vercel/analytics/dist/index.mjs"
     type="module"></script>
   <script nonce="randomNonce" src="/scripts/inline-scripts.js" type="module"></script>
