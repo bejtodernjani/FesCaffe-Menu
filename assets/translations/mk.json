@@ -130,7 +130,7 @@
   "menuTitleColdDrinks": "Студени Напитоци",
   "coldDrinksCoffeesTitle": "Кафиња",
   "coldDrinksDrinksTitle": "Пијалоци",
-  "item55Title": "Ледено Еспресо",
+  "item55Title": "Леден Еспресо",
   "item56Title": "Леден Макијато",
   "item57Title": "Леден Американо",
   "item58Title": "Леден Нескафе",
@@ -194,5 +194,7 @@
   "item110Title": "Мајонез",
   "item111Title": "Барбекју Сос",
   "item112Title": "Лут Сос",
-  "item113Title": "Мед"
+  "item113Title": "Мед",
+  "item114Title": "Ладен јагода лате",
+  "item115Title": "Мока"
 }
