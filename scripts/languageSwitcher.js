@@ -1,6 +1,6 @@
 // Function to load translations from the JSON file
 function loadTranslations(lang) {
-  return fetch(`/assets/translations/${lang}.json`)
+  return fetch(`assets/translations/${lang}.json`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Failed to load ${lang}.json`);
