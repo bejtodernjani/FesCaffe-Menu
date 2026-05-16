@@ -1,48 +1,50 @@
-import { useNavigate } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
-import styles from './HomePage.module.css'
+import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import styles from "./HomePage.module.css";
 
 const drinkCategories = [
-  { name: 'drinks',   color: '#1a1a1a' },
-  { name: 'desserts', color: '#1a1a1a' },
-]
+  { name: "drinks", color: "#1a1a1a" },
+  { name: "desserts", color: "#1a1a1a" },
+];
 
 const foodCategories = [
-  { name: 'breakfast', color: '#1a1a1a' },
-  { name: 'pizza',     color: '#E8192C' },
-  { name: 'lunch',     color: '#2D6A4F' },
-  { name: 'salads',    color: '#E07B3A' },
-]
+  { name: "breakfast", color: "#1a1a1a" },
+  { name: "pizza", color: "#E8192C" },
+  { name: "lunch", color: "#2D6A4F" },
+  { name: "salads", color: "#E07B3A" },
+];
 
 export default function HomePage() {
-  const navigate = useNavigate()
-  const foodRefs = useRef([])
+  const navigate = useNavigate();
+  const foodRefs = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add(styles.visible)
-            observer.unobserve(entry.target)
+            entry.target.classList.add(styles.visible);
+            observer.unobserve(entry.target);
           }
-        })
+        });
       },
-      { threshold: 0.15 }
-    )
-    foodRefs.current.forEach((el) => el && observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
+      { threshold: 0.15 },
+    );
+    foodRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className={styles.page}>
-
       {/* ── Section 1: Hero ── */}
       <section className={styles.heroSection}>
-
         <div className={styles.logoArea}>
           <p className={styles.welcomeText}>Welcome to</p>
-          <img src="/Logo.png" alt="Fes Lounge & Café" className={styles.logo} />
+          <img
+            src="/Logo.png"
+            alt="Fes Lounge & Café"
+            className={styles.logo}
+          />
         </div>
 
         {/* Boxes then sign flush underneath */}
@@ -56,7 +58,10 @@ export default function HomePage() {
               >
                 <div className={styles.boxWrapper}>
                   <img src="/box.png" alt="" aria-hidden="true" />
-                  <span className={styles.boxLabel} style={{ color: cat.color }}>
+                  <span
+                    className={styles.boxLabel}
+                    style={{ color: cat.color }}
+                  >
                     {cat.name}
                   </span>
                 </div>
@@ -74,8 +79,12 @@ export default function HomePage() {
         </div>
 
         {/* Chef — absolutely positioned at bottom-left */}
-        <img src="/chef.png" alt="" aria-hidden="true" className={styles.chefImg} />
-
+        <img
+          src="/chef.png"
+          alt=""
+          aria-hidden="true"
+          className={styles.chefImg}
+        />
       </section>
 
       {/* ── Section 2: Food ring — scroll reveal ── */}
@@ -99,7 +108,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
     </div>
-  )
+  );
 }
