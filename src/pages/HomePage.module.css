@@ -5,33 +5,46 @@
   background-color: #FAF3E0;
 }
 
-/* ── Section 1: Hero ── */
+/* ─────────────────────────────────────────
+   Section 1: Hero
+───────────────────────────────────────── */
 .heroSection {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   padding: 40px 24px;
   background-color: #FAF3E0;
+
+  /* Slow reveal on page load */
+  animation: heroFadeIn 1.4s ease both;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .logoArea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
+/* ↓ Resize "Welcome to" here */
 .welcomeText {
   font-family: 'Satisfy', cursive;
-  font-size: clamp(1.2rem, 4vw, 1.7rem);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
   color: #1a1a1a;
 }
 
+/* ↓ Resize logo here */
 .logo {
-  width: clamp(160px, 50vw, 210px);
+  width: clamp(200px, 58vw, 260px);
   object-fit: contain;
 }
 
@@ -39,14 +52,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
 }
 
-/* natural image width = 247px — display close to native to keep quality */
+/* ↓ Resize drink/dessert boxes here — change max-width */
 .catBtn {
   width: 100%;
-  max-width: 252px;
+  max-width: 210px;
   background: none;
   border: none;
   padding: 0;
@@ -57,29 +70,25 @@
 .catBtn:hover  { transform: scale(1.04); opacity: 0.9; }
 .catBtn:active { transform: scale(0.97); }
 
-.catBtn img {
-  width: 100%;
-  display: block;
-  border: 2px solid #1a1a1a;
-}
-
-/* scroll sign — purely decorative, subtle bounce */
+/* Scroll sign — decorative bounce */
 .scrollSign {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .scrollSign img {
-  width: clamp(140px, 38vw, 190px);
+  width: clamp(130px, 35vw, 175px);
   display: block;
   animation: bounce 2s ease-in-out infinite;
 }
 
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(6px); }
+  50%       { transform: translateY(7px); }
 }
 
-/* ── Section 2: Food ring ── */
+/* ─────────────────────────────────────────
+   Section 2: Food ring
+───────────────────────────────────────── */
 .foodSection {
   min-height: 100dvh;
   background-color: #FAF3E0;
@@ -96,21 +105,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
 }
 
-/* start hidden — revealed by IntersectionObserver */
+/* ↓ Resize food category boxes here — change max-width */
 .foodBtn {
   width: 100%;
-  max-width: 252px;
+  max-width: 210px;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
+  /* start hidden — revealed by IntersectionObserver */
   opacity: 0;
   transform: translateY(36px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .foodBtn.visible {
@@ -118,27 +128,33 @@
   transform: translateY(0);
 }
 
-.foodBtn:hover  { transform: scale(1.04); opacity: 0.92; }
+.foodBtn:hover  { transform: scale(1.04) translateY(0); opacity: 0.92; }
 .foodBtn:active { transform: scale(0.97); }
 
-.foodBtn img {
-  width: 100%;
+/* ─────────────────────────────────────────
+   Shared: box image + centered text overlay
+───────────────────────────────────────── */
+.boxWrapper {
+  position: relative;
   display: block;
-  border: 2px solid #1a1a1a;
+  width: 100%;
 }
 
-/* fallback for missing images */
-.fallback {
-  display: none;
+.boxWrapper img {
   width: 100%;
-  height: 52px;
-  border: 2px solid #1a1a1a;
+  display: block;
+}
+
+/* ↓ Resize box label text here — change font-size */
+.boxLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Caveat', cursive;
-  font-size: 1.5rem;
-  color: #1a1a1a;
-  background: repeating-linear-gradient(
-    45deg, #f5f5f5 0px, #f5f5f5 3px, #fff 3px, #fff 10px
-  );
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  pointer-events: none;
 }

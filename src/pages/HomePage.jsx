@@ -3,15 +3,15 @@ import { useEffect, useRef } from 'react'
 import styles from './HomePage.module.css'
 
 const drinkCategories = [
-  { name: 'drinks',   image: '/Drinks.png' },
-  { name: 'desserts', image: '/Dessert.png' },
+  { name: 'drinks',   color: '#1a1a1a' },
+  { name: 'desserts', color: '#1a1a1a' },
 ]
 
 const foodCategories = [
-  { name: 'breakfast', image: '/Breakfast.png' },
-  { name: 'pizza',     image: '/Pizza.png' },
-  { name: 'lunch',     image: '/Lunch.png' },
-  { name: 'salads',    image: '/Salads.png' },
+  { name: 'breakfast', color: '#1a1a1a' },
+  { name: 'pizza',     color: '#E8192C' },
+  { name: 'lunch',     color: '#2D6A4F' },
+  { name: 'salads',    color: '#E07B3A' },
 ]
 
 export default function HomePage() {
@@ -37,8 +37,9 @@ export default function HomePage() {
   return (
     <div className={styles.page}>
 
-      {/* ── Section 1: logo + drinks/desserts + scroll sign ── */}
+      {/* ── Section 1: Hero ── */}
       <section className={styles.heroSection}>
+
         <div className={styles.logoArea}>
           <p className={styles.welcomeText}>Welcome to</p>
           <img src="/Logo.png" alt="Fes Lounge & Café" className={styles.logo} />
@@ -51,7 +52,12 @@ export default function HomePage() {
               className={styles.catBtn}
               onClick={() => navigate(`/category/${cat.name}`)}
             >
-              <img src={cat.image} alt={cat.name} />
+              <div className={styles.boxWrapper}>
+                <img src="/box.png" alt="" aria-hidden="true" />
+                <span className={styles.boxLabel} style={{ color: cat.color }}>
+                  {cat.name}
+                </span>
+              </div>
             </button>
           ))}
         </div>
@@ -59,9 +65,10 @@ export default function HomePage() {
         <div className={styles.scrollSign}>
           <img src="/Sign.png" alt="scroll down for food" />
         </div>
+
       </section>
 
-      {/* ── Section 2: food categories revealed on scroll ── */}
+      {/* ── Section 2: Food ring — revealed on scroll ── */}
       <section className={styles.foodSection}>
         <div className={styles.foodCats}>
           {foodCategories.map((cat, i) => (
@@ -72,13 +79,12 @@ export default function HomePage() {
               style={{ transitionDelay: `${i * 0.18}s` }}
               onClick={() => navigate(`/category/${cat.name}`)}
             >
-              <img src={cat.image} alt={cat.name}
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none'
-                  e.currentTarget.nextSibling.style.display = 'flex'
-                }}
-              />
-              <span className={styles.fallback}>{cat.name}</span>
+              <div className={styles.boxWrapper}>
+                <img src="/box.png" alt="" aria-hidden="true" />
+                <span className={styles.boxLabel} style={{ color: cat.color }}>
+                  {cat.name}
+                </span>
+              </div>
             </button>
           ))}
         </div>
