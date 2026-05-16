@@ -40,43 +40,41 @@ export default function HomePage() {
       {/* ── Section 1: Hero ── */}
       <section className={styles.heroSection}>
 
-        {/* Left column: logo + boxes + sign */}
-        <div className={styles.heroLeft}>
-          <div className={styles.logoArea}>
-            <p className={styles.welcomeText}>Welcome to</p>
-            <img src="/Logo.png" alt="Fes Lounge & Café" className={styles.logo} />
+        <div className={styles.logoArea}>
+          <p className={styles.welcomeText}>Welcome to</p>
+          <img src="/Logo.png" alt="Fes Lounge & Café" className={styles.logo} />
+        </div>
+
+        {/* Boxes then sign flush underneath */}
+        <div className={styles.drinkStack}>
+          <div className={styles.drinkCats}>
+            {drinkCategories.map((cat) => (
+              <button
+                key={cat.name}
+                className={styles.catBtn}
+                onClick={() => navigate(`/category/${cat.name}`)}
+              >
+                <div className={styles.boxWrapper}>
+                  <img src="/box.png" alt="" aria-hidden="true" />
+                  <span className={styles.boxLabel} style={{ color: cat.color }}>
+                    {cat.name}
+                  </span>
+                </div>
+              </button>
+            ))}
           </div>
 
-          {/* drinkStack: boxes then sign with zero gap so sign touches desserts */}
-          <div className={styles.drinkStack}>
-            <div className={styles.drinkCats}>
-              {drinkCategories.map((cat) => (
-                <button
-                  key={cat.name}
-                  className={styles.catBtn}
-                  onClick={() => navigate(`/category/${cat.name}`)}
-                >
-                  <div className={styles.boxWrapper}>
-                    <img src="/box.png" alt="" aria-hidden="true" />
-                    <span className={styles.boxLabel} style={{ color: cat.color }}>
-                      {cat.name}
-                    </span>
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            {/* Sign sits flush under desserts box */}
-            <div className={styles.scrollSign}>
-              <img src="/Sign.png" alt="scroll down for food" />
+          {/* Sign with CSS text overlay — no gap so it touches desserts */}
+          <div className={styles.scrollSign}>
+            <div className={styles.boxWrapper}>
+              <img src="/Sign.png" alt="" aria-hidden="true" />
+              <span className={styles.signLabel}>check our food</span>
             </div>
           </div>
         </div>
 
-        {/* Right column: chef illustration */}
-        <div className={styles.heroRight}>
-          <img src="/chef.png" alt="Chef" className={styles.chefImg} />
-        </div>
+        {/* Chef — absolutely positioned at bottom-left */}
+        <img src="/chef.png" alt="" aria-hidden="true" className={styles.chefImg} />
 
       </section>
 

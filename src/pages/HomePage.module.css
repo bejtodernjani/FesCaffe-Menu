@@ -7,14 +7,16 @@
    Section 1 — Hero
 ═══════════════════════════════════════ */
 .heroSection {
+  position: relative;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  padding: 40px 24px;
+  gap: 20px;
+  padding: 40px 24px 60px;
   background-color: #FAF3E0;
+  overflow: hidden;
   animation: heroFadeIn 1.4s ease both;
 }
 
@@ -23,19 +25,14 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Logo area ── */
-.heroLeft {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
+/* ── Logo ── */
 .logoArea {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ↓ Resize "Welcome to" here */
@@ -51,12 +48,13 @@
   object-fit: contain;
 }
 
-/* ── Drink boxes + sign stacked flush ── */
+/* ── Boxes + sign column ── */
 .drinkStack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* no gap — sign must touch desserts box */
+  position: relative;
+  z-index: 1;
 }
 
 .drinkCats {
@@ -66,7 +64,7 @@
   gap: 10px;
 }
 
-/* ↓ Resize drinks/desserts boxes here */
+/* ↓ Resize drinks/desserts boxes here — change max-width */
 .catBtn {
   width: 100%;
   max-width: 150px;
@@ -80,10 +78,13 @@
 .catBtn:hover  { transform: scale(1.04); opacity: 0.9; }
 .catBtn:active { transform: scale(0.97); }
 
-/* Sign: no margin-top so it sits flush under desserts */
+/* Sign flush under desserts, no margin */
+.scrollSign {
+  width: 100%;
+  max-width: 150px;
+}
+
 .scrollSign img {
-  width: clamp(120px, 32vw, 165px);
-  display: block;
   animation: bounce 2s ease-in-out infinite;
 }
 
@@ -92,20 +93,63 @@
   50%       { transform: translateY(7px); }
 }
 
-/* ── Chef illustration ── */
-.heroRight {
+/* Text overlay on sign — positioned below the bracket lines (~top 42%) */
+.signLabel {
+  position: absolute;
+  top: 42%;
+  bottom: 4%;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(0.65rem, 2vw, 0.85rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  pointer-events: none;
+  text-align: center;
+  line-height: 1.1;
 }
 
-/* ↓ Resize chef here */
+/* ── Chef — absolute bottom-left ── */
+/* ↓ Resize chef here — change width */
 .chefImg {
-  width: clamp(130px, 38vw, 180px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(140px, 40vw, 195px);
   object-fit: contain;
-  /* crisp rendering for cartoon/illustration */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════
+   Shared — box image + text overlay
+═══════════════════════════════════════ */
+.boxWrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.boxWrapper img {
+  width: 100%;
+  display: block;
+}
+
+/* ↓ Resize box label text here — change font-size */
+.boxLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  pointer-events: none;
 }
 
 /* ═══════════════════════════════════════
@@ -130,7 +174,7 @@
   gap: 10px;
 }
 
-/* ↓ Resize food boxes here */
+/* ↓ Resize food boxes here — change max-width */
 .foodBtn {
   width: 100%;
   max-width: 150px;
@@ -152,90 +196,39 @@
 .foodBtn:active { transform: scale(0.97); }
 
 /* ═══════════════════════════════════════
-   Shared — box image + text overlay
-═══════════════════════════════════════ */
-.boxWrapper {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-
-.boxWrapper img {
-  width: 100%;
-  display: block;
-}
-
-/* ↓ Resize label text here */
-.boxLabel {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Caveat', cursive;
-  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  pointer-events: none;
-}
-
-/* ═══════════════════════════════════════
    Desktop — ≥ 768px
 ═══════════════════════════════════════ */
 @media (min-width: 768px) {
-
-  /* Hero: side by side */
   .heroSection {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 60px 48px;
-  }
-
-  .heroLeft {
+    padding: 60px 80px 80px;
     gap: 28px;
   }
 
-  .welcomeText {
-    font-size: 2.4rem;
-  }
+  .welcomeText { font-size: 2.4rem; }
+  .logo        { width: 320px; }
 
-  .logo {
-    width: 300px;
-  }
-
-  .catBtn {
-    max-width: 200px;
-  }
-
-  .scrollSign img {
-    width: 190px;
-  }
+  .catBtn      { max-width: 200px; }
+  .scrollSign  { max-width: 200px; }
 
   .chefImg {
-    width: clamp(220px, 28vw, 380px);
+    width: clamp(200px, 30vw, 300px);
   }
 
-  /* Food section: 2×2 grid */
   .foodSection {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 60px 48px;
   }
 
   .foodCats {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 440px;
+    gap: 18px;
+    max-width: 420px;
   }
 
-  .foodBtn {
-    max-width: 100%;
-  }
+  .foodBtn { max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════
@@ -243,23 +236,15 @@
 ═══════════════════════════════════════ */
 @media (min-width: 1200px) {
   .heroSection {
-    gap: 100px;
-    max-width: 1200px;
+    max-width: 1100px;
+    padding: 60px 120px 100px;
   }
 
-  .logo {
-    width: 340px;
-  }
+  .welcomeText { font-size: 2.8rem; }
+  .logo        { width: 360px; }
+  .catBtn      { max-width: 240px; }
+  .scrollSign  { max-width: 240px; }
+  .chefImg     { width: 340px; }
 
-  .welcomeText {
-    font-size: 2.8rem;
-  }
-
-  .chefImg {
-    width: 420px;
-  }
-
-  .catBtn {
-    max-width: 230px;
-  }
+  .foodCats    { max-width: 500px; gap: 22px; }
 }
