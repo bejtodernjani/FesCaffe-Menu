@@ -1,24 +1,20 @@
 .page {
   width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
   background-color: #FAF3E0;
 }
 
-/* ─────────────────────────────────────────
-   Section 1: Hero
-───────────────────────────────────────── */
+/* ═══════════════════════════════════════
+   Section 1 — Hero
+═══════════════════════════════════════ */
 .heroSection {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
   padding: 40px 24px;
   background-color: #FAF3E0;
-
-  /* Slow reveal on page load */
   animation: heroFadeIn 1.4s ease both;
 }
 
@@ -27,12 +23,19 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Logo area ── */
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .logoArea {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  margin-bottom: 8px;
 }
 
 /* ↓ Resize "Welcome to" here */
@@ -48,18 +51,25 @@
   object-fit: contain;
 }
 
+/* ── Drink boxes + sign stacked flush ── */
+.drinkStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* no gap — sign must touch desserts box */
+}
+
 .drinkCats {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 100%;
 }
 
-/* ↓ Resize drink/dessert boxes here — change max-width */
+/* ↓ Resize drinks/desserts boxes here */
 .catBtn {
   width: 100%;
-  max-width: 210px;
+  max-width: 150px;
   background: none;
   border: none;
   padding: 0;
@@ -70,13 +80,9 @@
 .catBtn:hover  { transform: scale(1.04); opacity: 0.9; }
 .catBtn:active { transform: scale(0.97); }
 
-/* Scroll sign — decorative bounce */
-.scrollSign {
-  margin-top: 6px;
-}
-
+/* Sign: no margin-top so it sits flush under desserts */
 .scrollSign img {
-  width: clamp(130px, 35vw, 175px);
+  width: clamp(120px, 32vw, 165px);
   display: block;
   animation: bounce 2s ease-in-out infinite;
 }
@@ -86,9 +92,25 @@
   50%       { transform: translateY(7px); }
 }
 
-/* ─────────────────────────────────────────
-   Section 2: Food ring
-───────────────────────────────────────── */
+/* ── Chef illustration ── */
+.heroRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ↓ Resize chef here */
+.chefImg {
+  width: clamp(130px, 38vw, 180px);
+  object-fit: contain;
+  /* crisp rendering for cartoon/illustration */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* ═══════════════════════════════════════
+   Section 2 — Food ring
+═══════════════════════════════════════ */
 .foodSection {
   min-height: 100dvh;
   background-color: #FAF3E0;
@@ -106,18 +128,16 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 100%;
 }
 
-/* ↓ Resize food category boxes here — change max-width */
+/* ↓ Resize food boxes here */
 .foodBtn {
   width: 100%;
-  max-width: 210px;
+  max-width: 150px;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  /* start hidden — revealed by IntersectionObserver */
   opacity: 0;
   transform: translateY(36px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -131,9 +151,9 @@
 .foodBtn:hover  { transform: scale(1.04) translateY(0); opacity: 0.92; }
 .foodBtn:active { transform: scale(0.97); }
 
-/* ─────────────────────────────────────────
-   Shared: box image + centered text overlay
-───────────────────────────────────────── */
+/* ═══════════════════════════════════════
+   Shared — box image + text overlay
+═══════════════════════════════════════ */
 .boxWrapper {
   position: relative;
   display: block;
@@ -145,7 +165,7 @@
   display: block;
 }
 
-/* ↓ Resize box label text here — change font-size */
+/* ↓ Resize label text here */
 .boxLabel {
   position: absolute;
   inset: 0;
@@ -153,8 +173,93 @@
   align-items: center;
   justify-content: center;
   font-family: 'Caveat', cursive;
-  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0.5px;
   pointer-events: none;
+}
+
+/* ═══════════════════════════════════════
+   Desktop — ≥ 768px
+═══════════════════════════════════════ */
+@media (min-width: 768px) {
+
+  /* Hero: side by side */
+  .heroSection {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 48px;
+  }
+
+  .heroLeft {
+    gap: 28px;
+  }
+
+  .welcomeText {
+    font-size: 2.4rem;
+  }
+
+  .logo {
+    width: 300px;
+  }
+
+  .catBtn {
+    max-width: 200px;
+  }
+
+  .scrollSign img {
+    width: 190px;
+  }
+
+  .chefImg {
+    width: clamp(220px, 28vw, 380px);
+  }
+
+  /* Food section: 2×2 grid */
+  .foodSection {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 48px;
+  }
+
+  .foodCats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 440px;
+  }
+
+  .foodBtn {
+    max-width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════
+   Large desktop — ≥ 1200px
+═══════════════════════════════════════ */
+@media (min-width: 1200px) {
+  .heroSection {
+    gap: 100px;
+    max-width: 1200px;
+  }
+
+  .logo {
+    width: 340px;
+  }
+
+  .welcomeText {
+    font-size: 2.8rem;
+  }
+
+  .chefImg {
+    width: 420px;
+  }
+
+  .catBtn {
+    max-width: 230px;
+  }
 }
