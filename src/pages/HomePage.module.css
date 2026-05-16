@@ -84,7 +84,8 @@
   max-width: 150px;
 }
 
-.scrollSign img {
+/* animate the whole wrapper so text moves with the sign */
+.scrollSign {
   animation: bounce 2s ease-in-out infinite;
 }
 
@@ -114,11 +115,12 @@
 
 /* ── Chef — absolute bottom-left ── */
 /* ↓ Resize chef here — change width */
+/* ↓ Resize chef here — change width */
 .chefImg {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: clamp(140px, 40vw, 195px);
+  width: clamp(200px, 58vw, 320px);
   object-fit: contain;
   pointer-events: none;
   z-index: 0;
