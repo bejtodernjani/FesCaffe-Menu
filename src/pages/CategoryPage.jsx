@@ -11,14 +11,12 @@ const categoryMeta = {
   desserts:  { image: '/Dessert.png',   color: '#1a1a1a' },
 }
 
-const foodCategories = ['breakfast', 'pizza', 'lunch', 'salads']
-
 export default function CategoryPage() {
   const { name } = useParams()
   const navigate = useNavigate()
   const items = menuData[name] || []
   const meta = categoryMeta[name] || { image: '', color: '#1a1a1a' }
-  const backPath = foodCategories.includes(name) ? '/food' : '/'
+  const backPath = '/'
 
   return (
     <div className={styles.page}>
