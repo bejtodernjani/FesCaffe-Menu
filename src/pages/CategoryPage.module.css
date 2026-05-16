@@ -1,0 +1,102 @@
+.page {
+  min-height: 100dvh;
+  background-color: #FAF3E0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 24px 40px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.backBtn {
+  align-self: flex-start;
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  padding: 4px 0;
+  margin-bottom: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.backBtn:hover {
+  opacity: 1;
+}
+
+.tabWrapper {
+  width: 65%;
+  margin-bottom: -2px;
+  position: relative;
+  z-index: 1;
+}
+
+.tab {
+  width: 100%;
+  display: block;
+  border: 2px solid #1a1a1a;
+}
+
+.panel {
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #1a1a1a;
+  border-radius: 0 4px 4px 4px;
+  padding: 24px 20px;
+  min-height: 400px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item {
+  padding: 14px 0;
+  border-bottom: 1px solid #e8e0ce;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.itemName {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.itemPrice {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.itemDesc {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.empty {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: #999;
+  text-align: center;
+  margin-top: 60px;
+}

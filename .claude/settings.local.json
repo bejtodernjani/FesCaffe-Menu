@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx vite *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\Tilla\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Tilla-OneDrive-Desktop-updatedFessCaffe\\\\ea015153-1ce9-431e-9816-974c5a8c1291\\\\tasks\\\\b4mwnj8ux.output\")",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(Rename-Item \"C:\\\\Users\\\\Tilla\\\\OneDrive\\\\Desktop\\\\updatedFessCaffe\\\\public\\\\Breakfast.png\" \"Drinks.png\")",
+      "Bash(git init *)"
+    ]
+  }
+}
