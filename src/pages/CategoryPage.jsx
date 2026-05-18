@@ -3,31 +3,44 @@ import { menuData } from '../data/menuData'
 import styles from './CategoryPage.module.css'
 
 const categoryMeta = {
-  breakfast: { image: '/Breakfast.png', color: '#1a1a1a' },
-  pizza:     { image: '/Pizza.png',     color: '#E8192C' },
-  lunch:     { image: '/Lunch.png',     color: '#2D6A4F' },
-  salads:    { image: '/Salads.png',    color: '#E07B3A' },
-  drinks:    { image: '/Drinks.png',    color: '#1a1a1a' },
-  desserts:  { image: '/Dessert.png',   color: '#1a1a1a' },
+  breakfast: { color: '#1a1a1a' },
+  pizza:     { color: '#E8192C' },
+  lunch:     { color: '#2D6A4F' },
+  salads:    { color: '#E07B3A' },
+  drinks:    { color: '#1a1a1a' },
+  desserts:  { color: '#1a1a1a' },
 }
 
 export default function CategoryPage() {
   const { name } = useParams()
   const navigate = useNavigate()
   const items = menuData[name] || []
-  const meta = categoryMeta[name] || { image: '', color: '#1a1a1a' }
-  const backPath = '/'
+  const meta = categoryMeta[name] || { color: '#1a1a1a' }
 
   return (
     <div className={styles.page}>
-      <button className={styles.backBtn} onClick={() => navigate(backPath)}>
+
+      <button className={styles.backBtn} onClick={() => navigate('/')}>
         ← back
       </button>
 
+      {/* Tab: box.png + CSS text overlay — sharp, translatable */}
       <div className={styles.tabWrapper}>
-        <img src={meta.image} alt={name} className={styles.tab} />
+        <div className={styles.boxWrapper}>
+          <img src="/box.png" alt="" aria-hidden="true" />
+          <span className={styles.tabLabel} style={{ color: meta.color }}>
+            {name}
+          </span>
+        </div>
       </div>
 
+      {/* Connector lines + rings */}
+      <div className={styles.connector}>
+        <div className={styles.line} />
+        <div className={styles.line} />
+      </div>
+
+      {/* Menu content panel */}
       <div className={styles.panel}>
         {items.length === 0 ? (
           <p className={styles.empty}>Menu coming soon…</p>
@@ -47,6 +60,7 @@ export default function CategoryPage() {
           </ul>
         )}
       </div>
+
     </div>
   )
 }
