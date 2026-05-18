@@ -37,10 +37,10 @@
     line-height: 1.6;
   }
 
-  .qrPlaceholder {
+  .qrCode {
     width: 160px;
     height: 160px;
-    border: 2px dashed #d4c9a8;
+    object-fit: contain;
     border-radius: 8px;
   }
 }

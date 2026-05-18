@@ -14,9 +14,7 @@ export default function DesktopOverlay() {
         <p className={styles.message}>
           Desktop mode is still in progress. In the meantime visit our link scanning this QR Code.
         </p>
-        <div className={styles.qrPlaceholder}>
-          {/* QR Code will go here */}
-        </div>
+        <img src="/qrcode.jpeg" alt="QR Code" className={styles.qrCode} />
       </div>
     </div>
   )
