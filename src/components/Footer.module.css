@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  background-color: #FAF3E0;
+  border-top: 1.5px solid #d4c9a8;
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.text {
+  font-family: 'Caveat', cursive;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  opacity: 0.6;
+}
+
+.divider {
+  margin: 0 6px;
+  opacity: 0.4;
+}
