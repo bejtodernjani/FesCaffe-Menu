@@ -40,6 +40,8 @@ export default function HomePage() {
 
   return (
     <div className={styles.page}>
+      <img src="/section_seperator.png" alt="" aria-hidden="true" className={styles.separator} />
+
       {/* ── Section 1: Hero ── */}
       <section className={styles.heroSection}>
         <div className={styles.logoArea}>
@@ -85,6 +87,8 @@ export default function HomePage() {
 
         <img src="/chef.png" alt="" aria-hidden="true" className={styles.chefImg} />
       </section>
+
+      <img src="/section_seperator.png" alt="" aria-hidden="true" className={styles.separator} />
 
       {/* ── Section 2: Food ring — scroll reveal ── */}
       <section className={styles.foodSection}>

@@ -3,6 +3,11 @@
   background-color: #FAF3E0;
 }
 
+.separator {
+  width: 100%;
+  display: block;
+}
+
 /* ═══════════════════════════════════════
    Section 1 — Hero
 ═══════════════════════════════════════ */
