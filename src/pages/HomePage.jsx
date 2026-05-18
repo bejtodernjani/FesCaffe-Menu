@@ -12,6 +12,7 @@ const foodCategories = [
   { name: "pizza", color: "#E8192C" },
   { name: "lunch", color: "#2D6A4F" },
   { name: "salads", color: "#E07B3A" },
+  { name: "pasta", color: "#C2651D" },
 ];
 
 export default function HomePage() {

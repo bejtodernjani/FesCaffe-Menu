@@ -1,0 +1,164 @@
+.page {
+  min-height: 100dvh;
+  background-color: #FAF3E0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 24px 60px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.backBtn {
+  align-self: flex-start;
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  padding: 4px 0;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+}
+
+.backBtn:hover { opacity: 1; }
+
+/* ── Each drink section (cold / hot) ── */
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+/* Hot section fades in on scroll */
+.hotSection {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hotSection.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Tab: box.png + text overlay ── */
+.tabWrapper {
+  width: 62%;
+}
+
+.boxWrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.boxWrapper img {
+  width: 100%;
+  display: block;
+}
+
+.tabLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+
+/* ── Connector ── */
+.connector {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 18%;
+  position: relative;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background-color: #1a1a1a;
+  position: relative;
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13px;
+  height: 13px;
+  border: 2px solid #1a1a1a;
+  border-radius: 50%;
+  background: #FAF3E0;
+}
+
+/* ── Panel ── */
+.panel {
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #1a1a1a;
+  padding: 20px 20px 8px;
+}
+
+/* ── Group (Coffees / Drinks / Tea) ── */
+.group {
+  margin-bottom: 16px;
+}
+
+.groupTitle {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  border-bottom: 1px solid #e8e0ce;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.list {
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0ebe0;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.itemName {
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.itemPrice {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}

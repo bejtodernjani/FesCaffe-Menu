@@ -7,7 +7,7 @@ const categoryMeta = {
   pizza:     { color: '#E8192C' },
   lunch:     { color: '#2D6A4F' },
   salads:    { color: '#E07B3A' },
-  drinks:    { color: '#1a1a1a' },
+  pasta:     { color: '#C2651D' },
   desserts:  { color: '#1a1a1a' },
 }
 
