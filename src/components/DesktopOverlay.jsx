@@ -1,13 +1,22 @@
+import Lottie from 'lottie-react'
 import styles from './DesktopOverlay.module.css'
 
 export default function DesktopOverlay() {
   return (
     <div className={styles.overlay}>
-      <img
-        src="/progress_pic.png"
-        alt="Desktop version coming soon"
-        className={styles.img}
-      />
+      <div className={styles.card}>
+        <Lottie
+          path="/maintain.json"
+          loop
+          className={styles.animation}
+        />
+        <p className={styles.message}>
+          Desktop mode is still in progress. In the meantime visit our link scanning this QR Code.
+        </p>
+        <div className={styles.qrPlaceholder}>
+          {/* QR Code will go here */}
+        </div>
+      </div>
     </div>
   )
 }

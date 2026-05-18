@@ -9,14 +9,37 @@
     position: fixed;
     inset: 0;
     z-index: 200;
-    background: #ffffff;
+    background: #FAF3E0;
     align-items: center;
     justify-content: center;
   }
 
-  .img {
-    max-width: 680px;
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 480px;
     width: 90%;
-    object-fit: contain;
+    text-align: center;
+  }
+
+  .animation {
+    width: 280px;
+    height: 280px;
+  }
+
+  .message {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    line-height: 1.5;
+  }
+
+  .qrPlaceholder {
+    width: 160px;
+    height: 160px;
+    border: 2px dashed #d4c9a8;
+    border-radius: 8px;
   }
 }
