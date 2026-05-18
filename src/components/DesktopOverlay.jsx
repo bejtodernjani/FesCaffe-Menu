@@ -1,4 +1,5 @@
 import Lottie from 'lottie-react'
+import maintainAnimation from '../../public/maintain.json'
 import styles from './DesktopOverlay.module.css'
 
 export default function DesktopOverlay() {
@@ -6,7 +7,7 @@ export default function DesktopOverlay() {
     <div className={styles.overlay}>
       <div className={styles.card}>
         <Lottie
-          path="/maintain.json"
+          animationData={maintainAnimation}
           loop
           className={styles.animation}
         />
