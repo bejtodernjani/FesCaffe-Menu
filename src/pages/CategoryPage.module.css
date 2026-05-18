@@ -101,7 +101,7 @@
 }
 
 .item {
-  padding: 14px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #e8e0ce;
 }
 
@@ -114,28 +114,31 @@
   justify-content: space-between;
   align-items: baseline;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 /* ↓ Resize item name here */
 .itemName {
   font-family: 'Caveat', cursive;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .itemPrice {
   font-family: 'Caveat', cursive;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: #1a1a1a;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .itemDesc {
   font-family: 'Caveat', cursive;
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.3;
 }
 
 .empty {
