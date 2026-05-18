@@ -1,0 +1,22 @@
+/* Hidden on mobile — only appears on desktop */
+.overlay {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .overlay {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: #ffffff;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img {
+    max-width: 680px;
+    width: 90%;
+    object-fit: contain;
+  }
+}
