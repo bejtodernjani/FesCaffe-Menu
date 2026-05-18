@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 40px 24px 60px;
+  padding: 92px 24px 60px;
   background-color: #FAF3E0;
   overflow: hidden;
   animation: heroFadeIn 1.4s ease both;
@@ -204,7 +204,7 @@
   .heroSection {
     max-width: 900px;
     margin: 0 auto;
-    padding: 60px 80px 80px;
+    padding: 112px 80px 80px;
     gap: 28px;
   }
 

@@ -1,12 +1,16 @@
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import { coldDrinks, hotDrinks } from '../data/menuData'
+import { useLang } from '../context/LanguageContext'
+import { t, mkFont } from '../data/translations'
 import styles from './DrinksPage.module.css'
 
-function DrinkGroup({ title, items }) {
+function DrinkGroup({ title, items, lang }) {
   return (
     <div className={styles.group}>
-      <h3 className={styles.groupTitle}>{title}</h3>
+      <h3 className={styles.groupTitle} style={{ fontFamily: mkFont(lang) }}>
+        {title}
+      </h3>
       <ul className={styles.list}>
         {items.map((item) => (
           <li key={item.id} className={styles.item}>
@@ -19,27 +23,29 @@ function DrinkGroup({ title, items }) {
   )
 }
 
-function DrinkSection({ label, color, groups, sectionRef, className }) {
+function DrinkSection({ label, color, groups, sectionRef, className, lang }) {
   return (
     <div className={className} ref={sectionRef}>
-      {/* Tab */}
       <div className={styles.tabWrapper}>
         <div className={styles.boxWrapper}>
           <img src="/box.png" alt="" aria-hidden="true" />
-          <span className={styles.tabLabel} style={{ color }}>{label}</span>
+          <span
+            className={styles.tabLabel}
+            style={{ color, fontFamily: mkFont(lang) }}
+          >
+            {label}
+          </span>
         </div>
       </div>
 
-      {/* Connector */}
       <div className={styles.connector}>
         <div className={styles.line} />
         <div className={styles.line} />
       </div>
 
-      {/* Panel */}
       <div className={styles.panel}>
         {groups.map((g) => (
-          <DrinkGroup key={g.title} title={g.title} items={g.items} />
+          <DrinkGroup key={g.title} title={g.title} items={g.items} lang={lang} />
         ))}
       </div>
     </div>
@@ -48,6 +54,7 @@ function DrinkSection({ label, color, groups, sectionRef, className }) {
 
 export default function DrinksPage() {
   const navigate = useNavigate()
+  const { lang } = useLang()
   const hotRef = useRef(null)
 
   useEffect(() => {
@@ -67,34 +74,36 @@ export default function DrinksPage() {
   }, [])
 
   const coldGroups = [
-    { title: 'Coffees', items: coldDrinks.coffees },
-    { title: 'Drinks',  items: coldDrinks.drinks  },
+    { title: t[lang].drinks.coffees, items: coldDrinks.coffees },
+    { title: t[lang].drinks.drinks,  items: coldDrinks.drinks  },
   ]
 
   const hotGroups = [
-    { title: 'Coffees', items: hotDrinks.coffees },
-    { title: 'Tea',     items: hotDrinks.tea      },
+    { title: t[lang].drinks.coffees, items: hotDrinks.coffees },
+    { title: t[lang].drinks.tea,     items: hotDrinks.tea      },
   ]
 
   return (
     <div className={styles.page}>
       <button className={styles.backBtn} onClick={() => navigate('/')}>
-        ← back
+        {t[lang].common.back}
       </button>
 
       <DrinkSection
-        label="cold"
+        label={t[lang].drinks.cold}
         color="#1a1a1a"
         groups={coldGroups}
         className={styles.section}
+        lang={lang}
       />
 
       <DrinkSection
-        label="hot"
+        label={t[lang].drinks.hot}
         color="#E8192C"
         groups={hotGroups}
         sectionRef={hotRef}
         className={`${styles.section} ${styles.hotSection}`}
+        lang={lang}
       />
     </div>
   )
