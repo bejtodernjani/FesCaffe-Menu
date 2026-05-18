@@ -174,6 +174,14 @@ export const menuData = {
     { id: 3,  name: 'Tiramisu',              nameMK: 'Тирамису',
                description: 'Espresso-soaked ladyfingers, mascarpone cream, cocoa',
                descMK:      'Пандишпан натопен во еспресо, крем маскарпоне, какао',              price: '—' },
+    { id: 4,  name: 'Trilece',               nameMK: 'Трилече',
+               description: '',              descMK: '',                                          price: '80 DEN' },
+    { id: 5,  name: 'Magnolia',              nameMK: 'Магнолија',
+               description: '',              descMK: '',                                          price: '80 DEN' },
+    { id: 6,  name: 'Brownie Cake',          nameMK: 'Брауни',
+               description: '',              descMK: '',                                          price: '80 DEN' },
+    { id: 7,  name: 'Cake',                  nameMK: 'Торта',
+               description: '',              descMK: '',                                          price: '100 DEN' },
   ],
 }
 
