@@ -12,8 +12,8 @@ function DrinkGroup({ title, items, lang }) {
         {title}
       </h3>
       <ul className={styles.list}>
-        {items.map((item) => (
-          <li key={item.id} className={styles.item}>
+        {items.map((item, i) => (
+          <li key={item.id} className={styles.item} style={{ animationDelay: `${0.1 + i * 0.05}s` }}>
             <span className={styles.itemName}>{item.name}</span>
             <span className={styles.itemPrice}>{item.price}</span>
           </li>

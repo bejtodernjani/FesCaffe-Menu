@@ -51,11 +51,11 @@ export default function CategoryPage() {
           <p className={styles.empty}>{t[lang].common.comingSoon}</p>
         ) : (
           <ul className={styles.list}>
-            {items.map((item) => {
+            {items.map((item, i) => {
               const itemName = (lang === 'mk' && item.nameMK) ? item.nameMK : item.name
               const itemDesc = (lang === 'mk' && item.descMK)  ? item.descMK  : item.description
               return (
-                <li key={item.id} className={styles.item}>
+                <li key={item.id} className={styles.item} style={{ animationDelay: `${0.1 + i * 0.06}s` }}>
                   <div className={styles.itemHeader}>
                     <span
                       className={styles.itemName}

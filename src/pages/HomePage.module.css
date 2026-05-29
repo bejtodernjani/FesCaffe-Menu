@@ -200,8 +200,8 @@
   transform: translateY(0);
 }
 
-.foodBtn:hover  { transform: scale(1.04) translateY(0); opacity: 0.92; }
-.foodBtn:active { transform: scale(0.97); }
+.foodBtn.visible:hover  { transform: scale(1.04); opacity: 0.92; }
+.foodBtn.visible:active { transform: scale(0.97); }
 
 /* ═══════════════════════════════════════
    Desktop — ≥ 768px
@@ -230,13 +230,14 @@
   }
 
   .foodCats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 18px;
-    max-width: 420px;
+    max-width: 560px;
   }
 
-  .foodBtn { max-width: 100%; }
+  .foodBtn { width: calc(33.333% - 12px); max-width: 160px; }
 }
 
 /* ═══════════════════════════════════════
