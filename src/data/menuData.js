@@ -192,7 +192,7 @@ export const menuData = {
       nameMK: "Пилешки Бургер",
       description: "Chicken, tomato, ketchup, mayo, fries, lettuce, cucumber",
       descMK: "Пиле, домат, кечап, мајонез, пржен компир, марула, краставица",
-      price: "180 DEN",
+      price: "200 DEN",
     },
     {
       id: 15,
