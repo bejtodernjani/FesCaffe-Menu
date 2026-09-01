@@ -464,7 +464,7 @@ export const coldDrinks = {
   coffees: [
     { id: 1, name: "Ice Espresso", price: "70 DEN" },
     { id: 2, name: "Ice Macchiato", price: "100 DEN" },
-    { id: 3, name: "Ice Americano", price: "70 DEN" },
+    { id: 3, name: "Ice Americano", price: "80 DEN" },
     { id: 4, name: "Ice Nesscaffe", price: "120 DEN" },
     { id: 5, name: "Ice Latte", price: "120 DEN" },
     { id: 6, name: "Iced Strawberry Latte", price: "100 DEN" },
@@ -511,7 +511,7 @@ export const hotDrinks = {
     { id: 2, name: "Double Espresso", price: "100 DEN" },
     { id: 3, name: "Small Macchiato", price: "70 DEN" },
     { id: 4, name: "Grande Macchiato", price: "80 DEN" },
-    { id: 5, name: "Americano", price: "70 DEN" },
+    { id: 5, name: "Americano", price: "80 DEN" },
     { id: 6, name: "Latte", price: "120 DEN" },
     { id: 7, name: "Cappuccino", price: "80 DEN" },
     { id: 8, name: "Turkish Coffee", price: "50 DEN" },
