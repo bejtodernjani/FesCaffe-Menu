@@ -105,7 +105,7 @@ export const menuData = {
       nameMK: "Хрскав Пилешки Бургер",
       description: "Chicken steak, tomato, mayo, lettuce, cucumber, fries",
       descMK: "Пилешки стек, домат, мајонез, марула, краставица, пржен компир",
-      price: "200 DEN",
+      price: "220 DEN",
     },
     {
       id: 5,
