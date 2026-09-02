@@ -14,7 +14,7 @@ export const menuData = {
       nameMK: "Менемен",
       description: "Tomatoes, pepper, eggs, black pepper, salt",
       descMK: "Домати, пипер, јајца, црн пипер, сол",
-      price: "250 DEN",
+      price: "300 DEN",
     },
     {
       id: 3,
@@ -114,7 +114,7 @@ export const menuData = {
       description: "Beef, tomato, ketchup, mayo, fries, lettuce, cucumber",
       descMK:
         "Говедско, домат, кечап, мајонез, пржен компир, марула, краставица",
-      price: "180 DEN",
+      price: "200 DEN",
     },
     {
       id: 6,
@@ -514,12 +514,12 @@ export const hotDrinks = {
     { id: 5, name: "Americano", price: "80 DEN" },
     { id: 6, name: "Latte", price: "120 DEN" },
     { id: 7, name: "Cappuccino", price: "80 DEN" },
-    { id: 8, name: "Turkish Coffee", price: "50 DEN" },
-    { id: 9, name: "Turkish Coffee Double", price: "70 DEN" },
-    { id: 10, name: "Nesscaffe", price: "100 DEN" },
-    { id: 11, name: "Hot Chocolate", price: "100 DEN" },
-    { id: 12, name: "Salep", price: "80 DEN" },
-    { id: 13, name: "Mocha", price: "100 DEN" },
+    { id: 8, name: "Turkish Coffee Double", price: "100 DEN" },
+    { id: 9, name: "Nesscaffe", price: "100 DEN" },
+    { id: 10, name: "Hot Chocolate", price: "100 DEN" },
+    { id: 11, name: "Salep", price: "80 DEN" },
+    { id: 12, name: "Mocha", price: "100 DEN" },
+    { id: 13, name: "Bambi", price: "80 DEN" },
   ],
   tea: [
     { id: 1, name: "Turkish Tea", price: "40 DEN" },
