@@ -478,7 +478,7 @@ export const coldDrinks = {
     { id: 6, name: "Sprite", price: "100 DEN" },
     { id: 7, name: "Go+", price: "70 DEN" },
     { id: 8, name: "Go+ Night", price: "70 DEN" },
-    { id: 9, name: "Golden Eagle", price: "70 DEN" },
+    { id: 9, name: "Golden Eagle", price: "80 DEN" },
     { id: 10, name: "Schweppes", price: "100 DEN" },
     { id: 11, name: "Schweppes Tangerine", price: "100 DEN" },
     { id: 12, name: "Schweppes Tonic", price: "100 DEN" },
